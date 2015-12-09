@@ -35,7 +35,7 @@ gem 'sprockets', '2.11.0'
 gem 'sass-rails'
 
 # Gemfile 
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.6'
 
 
 # Use ActiveModel has_secure_password
