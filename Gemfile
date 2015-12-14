@@ -39,6 +39,11 @@ gem 'devise', '>=3.2.4'
 # Gemfile 
 gem 'will_paginate', '~> 3.0.6'
 
+# add geocoder
+gem "geocoder"
+
+# add figaro
+gem "figaro", ">= 1.0.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
