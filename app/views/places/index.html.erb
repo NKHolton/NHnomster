@@ -19,8 +19,17 @@
           </blockquote>
         </div>
       <% end %>
-      
-	</div>
+
+      <% if place.photo.present? %>
+        <div class="col-xs-12">
+            <%= image_tag photo.picture, :class => 'img_responsive' %>
+             <%= photo.caption %>
+            <small><%= photo.user.email %></small>
+            <% end %>
+        </div>
+       <% end %>
+
+    </div>
 
 <% end %>
 
