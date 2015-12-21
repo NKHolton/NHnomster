@@ -86,10 +86,24 @@ function initMap() {
   </div>
 <% end %>
 
+
+
 <h1>Photos</h1>
 
+<%= simple_form_for @photo, :url => '#' do |f| %>
+  <%= f.input :picture %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+<% end %>
+
 <% @place.photos.each do |photo| %>
-  <%= image_tag photo.picture %>
-  <%= photo.caption %>
-    <small><%= photo.user.email %></small>
+  <div class="col-xs-12 col-sm-6">
+    <blockquote>
+    <% if photo.present? %>
+      <b><%= image_tag photo.picture, :class => 'img_responsive' %></b>
+    <%= photo.caption %>
+      <small><%= photo.user.email %></small>
+    <% end %>
+    </blockquote>
+  </div>
 <% end %>
