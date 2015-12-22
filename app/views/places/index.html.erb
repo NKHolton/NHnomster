@@ -8,6 +8,16 @@
 			<small><%= place.user.email %></small>
 		<% end %>
 
+    <% if place.photos.last.present? %>
+    <div class="col-xs-12 pull-left">
+      <blockquote>
+        <%= image_tag place.photos.last.picture, :class => 'img-responsive center-block' %><br />
+        <%= place.photos.last.caption %>
+      </blockquote>
+    <% end %>
+  </div>
+
+
 	  <% if place.comments.present? %>
         <div class="col-xs-12">
           <blockquote>
@@ -19,15 +29,8 @@
           </blockquote>
         </div>
     <% end %>
-
-    <% if place.photos.present? %>
-      <div class="col-xs-12">
-        <%= image_tag photo.picture, :class => 'img_responsive' %>
-        <%= photo.caption %>
-      </div>
-    <% end %>
-
   </div>
+
 <% end %>
 
 <%= will_paginate @places %>

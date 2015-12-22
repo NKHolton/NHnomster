@@ -40,6 +40,15 @@ function initMap() {
 		<% end %>
 	</div>
 
+<!-- Comments Button trigger modal -->
+<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
+  Add a comment
+</button>
+
+<!-- Photo Button trigger modal -->
+<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myPhotoModal">
+  Add a photo
+</button>
 
 <!-- Comments Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -47,7 +56,7 @@ function initMap() {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
+        <h2 class="modal-title" id="myModalLabel">Add a comment</h2>
       </div>
       <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
           <div class="modal-body">
@@ -65,11 +74,7 @@ function initMap() {
 </div>
 
 <div class="col-xs-10 col-xs-offset-1">
-  <h1 class="pull-left">Comments</h1>
-  <!-- Button trigger modal -->
-  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
-    Add a comment
-  </button>
+  <h3 class="pull-left">Comments</h3>
 </div>
 
 <div class="clear"></div>
@@ -85,12 +90,6 @@ function initMap() {
     </blockquote>
   </div>
 <% end %>
-
-  <!-- Photo Button trigger modal -->
-  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myPhotoModal">
-  Add a photo
-  </button>
-</div>
 
 <!-- Photos Modal -->
 <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -111,15 +110,16 @@ function initMap() {
 
 <div class="col-xs-10 col-xs-offset-1">
   <h5 class="pull-left">Photos</h5>
+</div>
 
 <div class="clear"></div>
 
 <% @place.photos.each do |photo| %>
-  <div class="col-xs-12 col-sm-6">
-    <% if photo.present? %>
-      <%= image_tag photo.picture, :class => 'img_responsive' %>
-      <%= photo.caption %>
-  </div>
+  <% if photo.present? %>
+    <div class="booyah-box col-xs-10 col-xs-offset-1">
+        <%= image_tag photo.picture, :class => 'img-responsive center-block' %>
+        <%= photo.caption %>
+    </div>
 <% end %>
 
 
