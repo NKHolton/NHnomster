@@ -121,13 +121,10 @@ function initMap() {
 
 <% @place.photos.each do |photo| %>
   <div class="col-xs-12 col-sm-6">
-      <blockquote>
-       <% if photo.present? %>
-        <b><%= image_tag photo.picture, :class => 'img_responsive' %></b>
-        <%= photo.caption %>
-        <small><%= photo.user.email %></small>
-       <% end %>
-      </blockquote>
-    </div>
+    <% if place.photos.present? %>
+      <%= image_tag photo.picture, :class => 'img_responsive' %>
+      <%= photo.caption %>
+  </div>
 <% end %>
+
 
