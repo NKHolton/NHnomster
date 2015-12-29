@@ -49,7 +49,7 @@ gem "figaro"
 gem 'carrierwave'
 
 #fog gem
-gem "fog", "~> 1.3.1"
+gem "fog"
 
 
 # Use ActiveModel has_secure_password
