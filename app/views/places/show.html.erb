@@ -40,16 +40,6 @@ function initMap() {
 		<% end %>
 	</div>
 
-<!-- Comments Button trigger modal -->
-<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
-  Add a comment
-</button>
-
-<!-- Photo Button trigger modal -->
-<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myPhotoModal">
-  Add a photo
-</button>
-
 <!-- Comments Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -75,8 +65,11 @@ function initMap() {
 
 <div class="col-xs-10 col-xs-offset-1">
   <h3 class="pull-left">Comments</h3>
+<!-- Comments Button trigger modal -->
+  <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
+  Add a comment
+  </button>
 </div>
-
 <div class="clear"></div>
 
 <% @place.comments.each do |comment| %>
@@ -100,18 +93,28 @@ function initMap() {
         <h4 class="modal-title" id="myPhotoModal">Add a photo</h4>
       </div>
         <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+          <div class="modal-body">
             <%= f.input :picture %>
             <%= f.input :caption %>
-          <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close
+            </button>
+            <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+          </div>
         <% end %>
     </div>
   </div>
 </div>
 
-<div class="col-xs-10 col-xs-offset-1">
-  <h5 class="pull-left">Photos</h5>
-</div>
 
+<div class="col-xs-10 col-xs-offset-1">
+  <h3 class="pull-left">Photos</h3>
+  <!-- Photos Button trigger modal -->
+  <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myPhotoModal">
+  Add a photo
+  </button>
+</div> 
 <div class="clear"></div>
 
 <% @place.photos.each do |photo| %>
