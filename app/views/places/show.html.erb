@@ -121,7 +121,9 @@ function initMap() {
   <% if photo.present? %>
     <div class="booyah-box col-xs-6-offset-1 col-sm-6">
         <%= image_tag photo.picture, :class => 'img-responsive center-block' %>
-        <i><%= photo.caption %></i>
+        <div class="caption text-center">
+        <%= photo.caption %>
+        </div>
     </div>
 <% end %>
 
