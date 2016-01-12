@@ -2,7 +2,13 @@ require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
   test "humanized_rating" do
-	comment = Comment.create(message: 'great place', rating: 'four stars'.)
-	puts comment.inspect  	
+	user = FactoryGirl.create(:user)
+  	place = FactoryGirl.create(:place)
+	comment = FactoryGirl.create(:comment, :user => user, :rating => '1_star')
+	expected = "One Star"
+	actual = comment.humanized_rating
+	assert_equal expected, actual
   end
 end
+
+

@@ -2,18 +2,6 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
 
-#testing comment humanized rating displays correctly:
-
-	test "comment rating functionality" do
-		user = FactoryGirl.create(:user)
-  		sign_in user
-
-  		place = FactoryGirl.create(:place)
-
-  		#more....
-	end
-
-#testing comment creation 
     test "comment creation functionality" do 
   	user = FactoryGirl.create(:user)
   	sign_in user
@@ -22,8 +10,8 @@ class CommentsControllerTest < ActionController::TestCase
 
   	assert_difference 'Comment.count' do
   		post :create, :place_id => place.id, {comment: =>{
-  			message => 'great food',
-  			rating => '4_stars',
+  			message: => 'great food',
+  			rating: => '4_stars',
   			}
   		}
   	end
