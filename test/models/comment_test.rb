@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "humanized_rating" do
+	comment = Comment.create(message: 'great place', rating: 'four stars'.)
+	puts comment.inspect  	
+  end
 end
