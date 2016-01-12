@@ -51,6 +51,9 @@ gem 'carrierwave'
 #fog gem
 gem "fog"
 
+#factorygirl testing gem
+gem "factory_girl_rails", "~> 4.0"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
