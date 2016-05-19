@@ -93,3 +93,8 @@ blockquote p {
   font-family: 'sinkin_sans500_medium_italic';
   font-size: 14px
 }
+
+.black-tooltip + .tooltip > .tooltip-inner {
+  background-color: black;
+  color: white;
+}

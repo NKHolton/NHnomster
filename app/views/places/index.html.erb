@@ -37,7 +37,6 @@
   </a>
 </div>
 
-
 <% @places.each do |place| %>
 	<div class="booyah-box col-xs-10 col-xs-offset-1">
 		<h1><%= link_to place.name, place_path(place) %></h1>
@@ -47,6 +46,9 @@
 		<% if place.user.present? %>
 			<small>-<%= place.user.email %></small>
 		<% end %>
+
+    <a href="#" class="black-tooltip" data-toggle="tooltip" data-placement="right" title="<%= place.name %>"><%= place.description %>
+    </a>
 
 	  <% if place.comments.present? %>
       <blockquote>
