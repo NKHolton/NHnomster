@@ -7,7 +7,7 @@
 		<%= f.input :description %>
     <br />
 		<%= f.submit 'Update', :class => 'btn btn-primary' %>
-    <%=link_to 'Close', place_path, :class => 'btn btn-default' %>
+    <%=link_to 'Close', place_path(@place), :class => 'btn btn-default' %>
 	<% end %>
 
 </div>
